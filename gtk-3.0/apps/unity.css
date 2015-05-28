@@ -1,0 +1,92 @@
+
+
+@define-color panel_bg_color #615d5a;
+@define-color panel_fg_color #c4aab3;
+
+
+UnityDecoration {
+    -UnityDecoration-extents: 5px 5px 5px 5px;
+    -UnityDecoration-input-extents: 5px;
+
+    -UnityDecoration-shadow-offset-x: 0px;
+    -UnityDecoration-shadow-offset-y: 2px;
+    -UnityDecoration-active-shadow-color: rgba(0,0,0,.4);
+    -UnityDecoration-active-shadow-radius: 5px;
+    -UnityDecoration-inactive-shadow-color: rgba(0,0,0,0);
+    -UnityDecoration-inactive-shadow-radius: 5px;
+
+    -UnityDecoration-glow-size: 20px;
+    -UnityDecoration-glow-color: @theme_selected_bg_color;
+
+    -UnityDecoration-title-indent: 10px;
+    -UnityDecoration-title-fade: 0px;
+    -UnityDecoration-title-alignment: 1.0;
+}
+
+UnityDecoration.top {
+
+
+    padding: 0 10px 0 10px;
+    background-image:none!important;
+    background-color: #615d5a;
+    border-radius: 0 0 0 0;
+    text-shadow: none;
+    color:rgba(0,0,0,0);
+}
+
+UnityDecoration.top:backdrop {
+    border: 0px solid @panel_bg_color;
+    border-bottom-width: 0;
+    background-image:none!important;
+    background-color: rgba(97, 93, 90, 0.5);
+    text-shadow:none;
+    color: rgba(0,0,0,0);
+    border-radius:0 0 0 0;
+}
+
+UnityDecoration.left,
+UnityDecoration.right,
+UnityDecoration.bottom {
+    
+    border:none;
+    background-color: #615d5a;
+}
+
+UnityDecoration.left:backdrop,
+UnityDecoration.right:backdrop,
+UnityDecoration.bottom:backdrop {
+    background-color: rgba(97,93,90,0.5);
+    border:none;
+}
+
+UnityPanelWidget,
+.unity-panel {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: @panel_bg_color;
+    background-color: @panel_bg_color;
+    color: @panel_fg_color;
+    box-shadow:none!important;
+    background-repeat:repeat;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+    background-color: @panel_bg_color;
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+    font-family: Tewi;
+    border-width: 0 1px;
+    color: @panel_fg_color;
+}
+
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem *:hover {
+    border-color: mix(@panel_bg_color, @panel_fg_color, 0.21);
+    background-color: @panel_bg_color;
+    background-image: none;
+    color: shade(@panel_fg_color, 1.08);
+}
